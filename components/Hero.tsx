@@ -4,8 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FanCard } from "./FanCard";
 import { copy, type Locale } from "@/data/content";
-
-const cardColors = ["#e63946", "#f4a261", "#167a74", "#6d4c8d", "#dc5272"];
+import { fanCards } from "@/data/fanCards";
 
 export function Hero({ locale }: { locale: Locale }) {
   const text = copy[locale].hero;
@@ -29,7 +28,7 @@ export function Hero({ locale }: { locale: Locale }) {
         <p className="mt-8 max-w-xl text-base leading-relaxed text-[#29282D]">{text.description}</p>
       </div>
       <div aria-hidden="true" className="absolute inset-x-0 top-[220px] z-0 flex h-[260px] items-end justify-center px-6 sm:top-[280px] sm:h-[390px] sm:px-28 md:top-[300px]">
-        {text.cards.map((label, index) => <FanCard key={label} index={index} color={cardColors[index]} label={label} />)}
+        {fanCards[locale].map((card, index) => <FanCard key={card.id} index={index} {...card} />)}
       </div>
       <div className="relative z-10 mt-auto pt-16 sm:pt-24">
         <Link href="#projeler" className="inline-flex rounded-full bg-[#fff] px-6 shadow-[0_3px_15px_rgba(0,0,0,0.16)] py-3 text-sm font-bold text-white transition-transform hover:-translate-y-0.5">{text.cta}</Link>

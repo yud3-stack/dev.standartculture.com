@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import type { MediaAsset } from "@/data/fanCards";
 
-type FanCardProps = { index: number; color: string; image?: string; label: string };
+type FanCardProps = { index: number; color: string; image?: MediaAsset; label: string };
 const rotations = [-18, -9, 0, 9, 18];
 const xOffsets = [-320, -160, 0, 160, 320];
 
@@ -30,7 +31,7 @@ export function FanCard({ index, color, image, label }: FanCardProps) {
       className="absolute bottom-[80px] left-1/2 ml-[-50px] aspect-square w-[100px] overflow-hidden rounded-2xl shadow-[0_18px_35px_rgba(0,0,0,0.16)] sm:ml-[-80px] sm:w-[160px] lg:ml-[-100px] lg:w-[200px]"
       style={{ backgroundColor: color }}
     >
-      {image && <img src={image} alt="" className="h-full w-full object-cover" />}
+      {image && <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/25 to-transparent p-4 text-[10px] font-bold tracking-[0.15em] text-white">{label}</div>
     </motion.article>
   );

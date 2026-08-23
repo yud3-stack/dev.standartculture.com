@@ -28,7 +28,6 @@ export function BussinesSlider({ locale }: { locale: Locale }) {
               key={i}
               className={`flex-none w-96 h-90 rounded-xl shadow-md flex items-center justify-center text-white font-medium transition-transform duration-300 hover:-translate-y-4 ${card.color}`}
             >
-              {card.title}
             </div>
           ))}
         </div>
