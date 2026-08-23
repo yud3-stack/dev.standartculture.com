@@ -23,10 +23,10 @@ export const fanCards: Record<Locale, FanCardContent[]> = {
     { id: "community", label: "COMMUNITY", color: "#dc5272", image: { src: "/media/fan-cards/image-5.webp", alt: "Culture artwork",} },
   ],
   tr: [
-    { id: "culture", label: "KÜLTÜR", color: "#e63946" },
-    { id: "stories", label: "HİKÂYE", color: "#f4a261" },
-    { id: "art", label: "SANAT", color: "#167a74" },
-    { id: "creativity", label: "YARATICILIK", color: "#6d4c8d" },
-    { id: "community", label: "TOPLULUK", color: "#dc5272" },
+    { id: "culture", label: "KÜLTÜR", color: "#e63946",  image: { src: "/media/fan-cards/image-1.webp", alt: "Culture artwork",} },
+    { id: "stories", label: "HİKÂYE", color: "#f4a261", image: { src: "/media/fan-cards/image-2.webp", alt: "Culture artwork",} },
+    { id: "art", label: "SANAT", color: "#167a74", image: { src: "/media/fan-cards/image-3.webp", alt: "Culture artwork",}},
+    { id: "creativity", label: "YARATICILIK", color: "#6d4c8d", image: { src: "/media/fan-cards/image-4.webp", alt: "Culture artwork",}},
+    { id: "community", label: "TOPLULUK", color: "#dc5272",image: { src: "/media/fan-cards/image-5.webp", alt: "Culture artwork",} },
   ],
 };
