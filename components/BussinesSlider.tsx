@@ -1,10 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { copy, type Locale } from "@/data/content";
+import type { BussinesCard } from "@/data/bussines";
 import { ArrowUpRight } from "lucide-react";
 
-export function BussinesSlider({ locale }: { locale: Locale }) {
+export function BussinesSlider({ locale, cards }: { locale: Locale; cards: BussinesCard[] }) {
   const text = copy[locale].business;
+  const marqueeCards = cards.length > 0 ? [...cards, ...cards] : [];
 
   return (
     <section className="py-14 text-center overflow-hidden border-y border-neutral-200">
@@ -23,11 +25,12 @@ export function BussinesSlider({ locale }: { locale: Locale }) {
 
       <div className="group relative w-full overflow-hidden marquee-container pt-8 pb-2">
         <div className="flex relative w-max gap-6 animate-scroll marquee-track group-hover:[animation-play-state:paused]">
-          {[...text.cards, ...text.cards].map((card, i) => (
+          {marqueeCards.map((card, i) => (
             <div
-              key={i}
-              className={`flex-none w-96 h-90 rounded-xl shadow-md flex items-center justify-center text-white font-medium transition-transform duration-300 hover:-translate-y-4 ${card.color}`}
+              key={`${card.id}-${i}`}
+              className="flex-none h-90 w-96 overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:-translate-y-4"
             >
+              <img src={card.src} alt={card.alt} className="h-full w-full object-cover" />
             </div>
           ))}
         </div>
