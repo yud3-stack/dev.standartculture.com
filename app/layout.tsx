@@ -21,6 +21,9 @@ const helveticaNeue = localFont({
 export const metadata: Metadata = {
   title: "StandArt Culture | Taking culture into the future",
   description: "Digital experiences for art, culture and creative projects.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml", sizes: "any" }],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
