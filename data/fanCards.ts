@@ -16,11 +16,11 @@ export type FanCardContent = {
 // This shape can be returned unchanged from a future CMS or admin-panel API.
 export const fanCards: Record<Locale, FanCardContent[]> = {
   en: [
-    { id: "culture", label: "CULTURE", color: "#e63946",  image: { src: "/media/fan-cards/culture.jpg", alt: "Culture artwork",}},
-    { id: "stories", label: "STORIES", color: "#f4a261", image: { src: "/media/fan-cards/stories.jpg", alt: "Culture artwork",} },
-    { id: "art", label: "ART", color: "#167a74", image: { src: "/media/fan-cards/art.jpg", alt: "Culture artwork",} },
-    { id: "creativity", label: "CREATIVITY", color: "#6d4c8d", image: { src: "/media/fan-cards/creativity.jpg", alt: "Culture artwork",} },
-    { id: "community", label: "COMMUNITY", color: "#dc5272", image: { src: "/media/fan-cards/communty.jpg", alt: "Culture artwork",} },
+    { id: "culture", label: "CULTURE", color: "#e63946",  image: { src: "/media/fan-cards/culture.webp", alt: "Culture artwork",}},
+    { id: "stories", label: "STORIES", color: "#f4a261", image: { src: "/media/fan-cards/stories.webp", alt: "Culture artwork",} },
+    { id: "art", label: "ART", color: "#167a74", image: { src: "/media/fan-cards/art.webp", alt: "Culture artwork",} },
+    { id: "creativity", label: "CREATIVITY", color: "#6d4c8d", image: { src: "/media/fan-cards/creativity.webp", alt: "Culture artwork",} },
+    { id: "community", label: "COMMUNITY", color: "#dc5272", image: { src: "/media/fan-cards/communty.webp", alt: "Culture artwork",} },
   ],
   tr: [
     { id: "culture", label: "KÜLTÜR", color: "#e63946" },
