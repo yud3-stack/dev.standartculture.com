@@ -8,7 +8,8 @@ export function Navbar({ locale }: { locale: Locale }) {
   const switchHref = locale === "tr" ? "/" : "/tr";
   const switchLabel = locale === "tr" ? "EN" : "TR";
   return (
-    <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-7 md:px-10">
+    <header className="mx-auto flex w-full  items-center justify-between px-6 py-7 md:px-10">
+      {/* max-w-7xl */}
       <Link href={prefix || "/"} className="shrink-0" aria-label="StandArt Culture home page">
         <Image src="/Logo.svg" alt="StandArt Culture" width={258} height={42} priority className="h-auto w-[155px] sm:w-[180px]" />
       </Link>

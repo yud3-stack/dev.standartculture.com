@@ -8,7 +8,7 @@ export const copy = {
     hero: { words: ["Taking", "culture", "into", "the", "future."], description: "We bring art, culture and creative projects together through digital experiences.", cta: "Explore our projects" },
     about: { label: "ABOUT", title: "The digital home of culture, art and creativity.", description: "StandArt Culture is an independent creative agency that brings ideas, people and institutions together around the transformative power of culture." },
     projects: { label: "PROJECTS", title: "Our Work", action: "Explore" },
-    contact: { label: "CONTACT", title: "Have an idea? Let’s talk.", description: "We are here to help make a new story visible." },
+    contact: { label: "CONTACT", titleBefore: "Have an idea?",titleHighlight:"Let’s talk.", description: "We are here to help make a new story visible." },
     footerLocation: "Samsun",
     business: {
       titleBefore: "We ",
@@ -30,7 +30,7 @@ export const copy = {
     hero: { words: ["Kültürü", "geleceğe", "taşıyoruz."], description: "Sanat, kültür ve yaratıcı projeleri dijital deneyimlerle buluşturuyoruz.", cta: "Projelerimizi İncele" },
     about: { label: "HAKKIMIZDA", title: "Kültürün, sanatın ve yaratıcılığın dijital adresi.", description: "StandArt Culture; fikirleri, insanları ve kurumları kültürün dönüştürücü gücü etrafında buluşturan bağımsız bir yaratıcı ajanstır." },
     projects: { label: "PROJELER", title: "Çalışmalarımız", action: "İncele" },
-    contact: { label: "İLETİŞİM", title: "Bir fikriniz mi var? Konuşalım.", description: "Yeni bir hikâyeyi birlikte görünür kılmak için buradayız." },
+    contact: { label: "İLETİŞİM", titleBefore: "Bir fikriniz mi var?",titleHighlight:"Konuşalım.", description: "Yeni bir hikâyeyi birlikte görünür kılmak için buradayız." },
     footerLocation: "Samsun",
     business: {
       titleBefore: "İşinizi ",
