@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const helveticaNeue = localFont({
   src: [
@@ -27,5 +28,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={helveticaNeue.variable}><body cz-shortcut-listen="false">{children}</body></html>;
+  return <html lang="en" className={helveticaNeue.variable}><body cz-shortcut-listen="false"><Analytics/>{children}</body></html>;
 }
