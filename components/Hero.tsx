@@ -25,7 +25,7 @@ export function Hero({ locale }: { locale: Locale }) {
             </motion.span>
           ))}
         </h1>
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-[#29282D]">{text.description}</p>
+        <p className="mt-3 max-w-xl text-base leading-relaxed text-[#29282D]">{text.description}</p>
       </div>
       <div aria-hidden="true" className="absolute inset-x-0 top-[220px] z-0 flex h-[260px] items-end justify-center px-6 sm:top-[280px] sm:h-[390px] sm:px-28 md:top-[300px]">
         {fanCards[locale].map((card, index) => <FanCard key={card.id} index={index} {...card} />)}
