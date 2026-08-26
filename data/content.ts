@@ -4,10 +4,10 @@ export type Locale = "en" | "tr";
 
 export const copy = {
   en: {
-    nav: { about: "About", projects: "Projects", contact: "Contact" },
+    nav: { about: "About Us", projects: "Projects", contact: "Contact" },
     hero: { words: ["Make", "them", "look", "twice"], description: "Smart ideas, bold design and social experiences built to make your brand impossible to ignore.", cta: "Explore our work" },
     about: { label: "ABOUT US", title: "Not just made to look good. Made to mean something.", description: "We combine strategy, creativity and culture to build brands people notice, remember and want to be part of." },
-    projects: { label: "SELECTED WORK", title: "Ideas made real.", action: "Explore", viewAll: "View all projects", allTitle: "All Projects", allDescription: "Explore the cultural identities, digital experiences and creative platforms we have brought to life." },
+    projects: { label: "SELECTED WORK", title: "Ideas made real.", action: "Explore", viewAll: "Our works", allTitle: "All Projects", allDescription: "Explore the cultural identities, digital experiences and creative platforms we have brought to life." },
     contact: { label: "LET'S MAKE SOMETHING BETTER", titleBefore: "Your brand has more to say.",titleHighlight:"Let's make them listen.", description: "Have an idea, a challenge or something completely new in mind? Let's make it worth looking at." },
     footerLocation: "Samsun",
     business: {
@@ -29,7 +29,7 @@ export const copy = {
     nav: { about: "Hakkımızda", projects: "Projeler", contact: "İletişim" },
     hero: { words: ["İki", "kez", "bakmalarını", "sağlayın."], description: "Akıllı fikirler, cesur tasarım ve sosyal deneyimler, markanızın göz ardı edilmesini imkansız hale getirmek için tasarlandı.", cta: "Çalışmalarımızı keşfedin" },
     about: { label: "HAKKIMIZDA", title: "Sadece güzel görünmek için yapılmadı. Bir anlam ifade etmesi için yapıldı.", description: "Strateji, yaratıcılık ve kültürü birleştirerek insanların dikkatini çeken, hatırladığı ve bir parçası olmak istediği markalar yaratıyoruz." },
-    projects: { label: "SEÇİLMİŞ ÇALIŞMALAR", title: "Hayaller gerçeğe dönüştü.", action: "İncele", viewAll: "Tüm projeleri gör", allTitle: "Tüm Projeler", allDescription: "Hayata geçirdiğimiz kültürel kimlikleri, dijital deneyimleri ve yaratıcı platformları keşfedin." },
+    projects: { label: "SEÇİLMİŞ ÇALIŞMALAR", title: "Hayaller gerçeğe dönüştü.", action: "İncele", viewAll: "Çalışmalarımız", allTitle: "Tüm Projeler", allDescription: "Hayata geçirdiğimiz kültürel kimlikleri, dijital deneyimleri ve yaratıcı platformları keşfedin." },
     contact: { label: "DAHA İYİSİNİ YAPALIM", titleBefore: "Markanızın söyleyecek daha çok şeyi var.",titleHighlight:"Dinlemelerini sağlayalım.", description: "Aklında bir fikir, bir meydan okuma veya tamamen yeni bir şey mi var? Gel, onu fark edilmeye değer kılalım." },
     footerLocation: "Samsun",
     business: {
