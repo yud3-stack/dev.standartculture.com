@@ -29,7 +29,6 @@ export function FanCard({ index, color, image, label }: FanCardProps) {
       whileHover={{ y: restingY - 8, boxShadow: "0 28px 48px rgba(0,0,0,0.22)" }}
       transition={{ type: "spring", stiffness: 80, damping: 14, delay: fanDelay }}
       className="absolute bottom-[80px] left-1/2 ml-[-50px] aspect-square w-[100px] overflow-hidden rounded-2xl shadow-[0_18px_35px_rgba(0,0,0,0.16)] sm:ml-[-80px] sm:w-[160px] lg:ml-[-100px] lg:w-[200px]"
-      // style={{ backgroundColor: color }}
     >
       {image && <img src={image.src} alt={image.alt} className="h-full w-full object-scale-down" />}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/25 to-transparent p-4 text-[10px] font-bold tracking-[0.15em] text-white">{label}</div>
