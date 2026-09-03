@@ -64,15 +64,18 @@ export async function ProjectDetail({
   if (!project) notFound();
 
   const index = projects.findIndex((item) => item.slug === slug);
-  const nextProject = projects[(index + 1) % projects.length];
+  const nextProject = projects.length > 0 && index >= 0
+    ? projects[(index + 1) % projects.length]
+    : undefined;
   const text = detailCopy[locale];
   const prefix = locale === "tr" ? "/tr" : "";
   const projectBase = locale === "tr" ? "/tr/projeler" : "/projects";
   const services = project.services ?? [];
+  const switchHref = locale === "tr" ? `/projects/${project.slug ?? slug}` : `/tr/projeler/${project.slug ?? slug}`;
 
   return (
     <>
-      <Navbar locale={locale} />
+      <Navbar locale={locale} switchHref={switchHref} />
 
       <main className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:px-10 md:pt-24">
         <p className="text-[11px] font-normal tracking-[0.2em] text-[#E73C29]">
