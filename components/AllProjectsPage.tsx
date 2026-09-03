@@ -35,11 +35,9 @@ export async function AllProjectsPage({ locale }: { locale: Locale }) {
     color: project.color ?? "#e5e5e5",
   }));
 
-  const switchHref = locale === "tr" ? "/projects" : "/tr/projeler";
-
   return (
     <>
-      <Navbar locale={locale} switchHref={switchHref} />
+      <Navbar locale={locale} />
       <main className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:px-10 md:pb-36 md:pt-24">
         <p className="text-[11px] font-semibold tracking-[0.2em] text-[#e63946]">
           {text.label}
