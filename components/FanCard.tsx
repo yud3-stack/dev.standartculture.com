@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { MediaAsset } from "@/data/fanCards";
 
-type FanCardProps = { index: number; color: string; image?: MediaAsset; label: string };
+type FanCardProps = { index: number; color?: string; image?: MediaAsset; label: string };
 const rotations = [-18, -9, 0, 9, 18];
 const xOffsets = [-320, -160, 0, 160, 320];
 
-export function FanCard({ index, color, image, label }: FanCardProps) {
+export function FanCard({ index, image, label }: FanCardProps) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const media = window.matchMedia("(max-width: 639px)");

@@ -5,11 +5,23 @@ import { Footer } from "./Footer";
 import { Hero } from "./Hero";
 import { Navbar } from "./Navbar";
 import { ProjectsGrid } from "./ProjectsGrid";
-import type { Locale } from "@/data/content";
-import { getBussinesCards } from "@/data/bussines";
 import { LogoSlider } from "./LogoSlider";
+import type { Locale } from "@/data/content";
+import type { HomepageData } from "@/app/lib/sanity/queries";
 
-export function HomePage({ locale }: { locale: Locale }) {
-  const bussinesCards = getBussinesCards(locale);
-  return <><Navbar locale={locale} /><main><Hero locale={locale} /><AboutSection locale={locale} /><BussinesSlider locale={locale} cards={bussinesCards} /><LogoSlider /><ProjectsGrid locale={locale} /><ContactSection locale={locale} /></main><Footer locale={locale} /></>;
+export function HomePage({ locale, data }: { locale: Locale; data: HomepageData }) {
+  return (
+    <>
+      <Navbar locale={locale} />
+      <main>
+        <Hero data={data.hero} />
+        <AboutSection data={data.about} />
+        <BussinesSlider data={data.business} />
+        <LogoSlider logos={data.references.logos} />
+        <ProjectsGrid locale={locale} />
+        <ContactSection locale={locale} />
+      </main>
+      <Footer locale={locale} />
+    </>
+  );
 }

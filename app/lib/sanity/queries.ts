@@ -3,28 +3,70 @@ import type { Locale } from "@/data/content";
 
 export type SanityQueryParams = { locale: Locale };
 
-/**
- * Every text field below is stored as { tr, en }. Passing $locale lets us
- * project straight down to a flat string with field[$locale], so the
- * fetched shape matches what copy[locale] already looks like today.
- */
+export type MediaCard = { id: string; src: string; alt: string };
 
+export type HomepageData = {
+  hero: {
+    words: string[];
+    description: string;
+    cta: string;
+    categories: { label: string; image: { src: string; alt: string } }[];
+  };
+  about: {
+    label: string;
+    title: string;
+    description: string;
+  };
+  business: {
+    titleBefore: string;
+    titleHighlight: string;
+    titleAfter: string;
+    cta: string;
+    images: MediaCard[];
+  };
+  references: {
+    logos: MediaCard[];
+  };
+  selectedWork: {
+    eyebrow: string;
+    title: string;
+    action: string;
+    viewAll: string;
+    allProjectsPage: { title: string; description: string };
+    projects: {
+      id: number;
+      slug: string;
+      title: string;
+      description: string;
+      year: number;
+      category: string;
+      color: string;
+    }[];
+  };
+};
+
+/**
+ * Every text field is stored as { tr, en }. Passing $locale lets us project
+ * straight down to a flat string with field[$locale], so the fetched shape
+ * matches (as closely as possible) what copy[locale] already looked like.
+ */
 export const homepageQuery = groq`
 *[_type == "homepage"][0]{
   "hero": {
-    "words": {
-      "word1": hero.words.word1[$locale],
-      "word2": hero.words.word2[$locale],
-      "word3": hero.words.word3[$locale],
-      "word4": hero.words.word4[$locale]
-    },
+    "words": [
+      hero.words.word1[$locale],
+      hero.words.word2[$locale],
+      hero.words.word3[$locale],
+      hero.words.word4[$locale]
+    ],
     "description": hero.description[$locale],
-    "ctaText": hero.ctaText[$locale],
+    "cta": hero.ctaText[$locale],
     "categories": hero.categories[] | order(order asc) {
       "label": label[$locale],
-      "image": image.asset->url,
-      "alt": image.alt,
-      order
+      "image": {
+        "src": image.asset->url,
+        "alt": image.alt
+      }
     }
   },
   "about": {
@@ -38,14 +80,16 @@ export const homepageQuery = groq`
     "titleAfter": business.titleAfter[$locale],
     "cta": business.cta[$locale],
     "images": business.images[]{
+      "id": _key,
       "src": asset->url,
-      alt
+      "alt": alt
     }
   },
   "references": {
     "logos": references.logos[]{
+      "id": _key,
       "src": asset->url,
-      alt
+      "alt": alt
     }
   },
   "selectedWork": {

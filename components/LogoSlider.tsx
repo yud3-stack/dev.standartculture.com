@@ -1,10 +1,8 @@
 import Image from "next/image";
-import { getLogoCards } from "@/data/logos";
+import type { MediaCard } from "@/app/lib/sanity/queries";
 
-export function LogoSlider() {
-  const logos = getLogoCards();
-
-  if (logos.length === 0) return null;
+export function LogoSlider({ logos }: { logos: MediaCard[] }) {
+  if (!logos || logos.length === 0) return null;
 
   return (
     <section className="py-16 overflow-hidden border-y border-neutral-200">

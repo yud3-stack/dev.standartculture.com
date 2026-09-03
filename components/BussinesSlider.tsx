@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import { copy, type Locale } from "@/data/content";
-import type { BussinesCard } from "@/data/bussines";
 import { ArrowUpRight } from "lucide-react";
+import type { HomepageData } from "@/app/lib/sanity/queries";
 
-export function BussinesSlider({ locale, cards }: { locale: Locale; cards: BussinesCard[] }) {
-  const text = copy[locale].business;
-  const marqueeCards = cards.length > 0 ? [...cards, ...cards] : [];
-
+export function BussinesSlider({ data }: { data: HomepageData["business"] }) {
+ const marqueeCards =
+  data.images?.length > 0
+    ? [...data.images, ...data.images]
+    : [];
   return (
     <section className="py-14 text-center overflow-hidden border-y border-neutral-200">
       <motion.div
@@ -17,9 +17,9 @@ export function BussinesSlider({ locale, cards }: { locale: Locale; cards: Bussi
         transition={{ duration: 0.65 }}
       >
         <h2 className="text-7xl font-semibold mb-16">
-          {text.titleBefore}
-          <span className="text-[#E73C29]">{text.titleHighlight}</span>
-          {text.titleAfter}
+          {data.titleBefore}
+          <span className="text-[#E73C29]">{data.titleHighlight}</span>
+          {data.titleAfter}
         </h2>
       </motion.div>
 
@@ -45,7 +45,7 @@ export function BussinesSlider({ locale, cards }: { locale: Locale; cards: Bussi
       >
         <button className="group flex flex-row items-center gap-2 font-regular text-4xl cursor-pointer transition-colors duration-300">
           <span className="relative">
-            {text.cta}
+            {data.cta}
             <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#29282D] transition-all duration-300 group-hover:w-full" />
           </span>
           <ArrowUpRight
