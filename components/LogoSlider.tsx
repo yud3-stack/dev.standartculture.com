@@ -6,8 +6,8 @@ export function LogoSlider({ logos }: { logos: MediaCard[] }) {
 
   return (
     <section className="py-16 overflow-hidden border-y border-neutral-200">
-      <div className="marquee-container relative w-full overflow-hidden">
-        <div className="marquee-track flex w-max items-center gap-16">
+      <div className="marquee-container  relative w-full overflow-hidden">
+        <div className="marquee-track marquee-track-reverse flex w-max items-center gap-16">
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.id}-${i}`}
