@@ -21,9 +21,6 @@ export function HomePage({ locale, data }: { locale: Locale; data: HomepageData 
         <ProjectsGrid
           locale={locale}
           projects={data.selectedWork.projects}
-        /><ProjectsGrid
-          locale={locale}
-          projects={data.selectedWork.projects}
         />
         <ContactSection locale={locale} />
       </main>
