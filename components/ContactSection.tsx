@@ -2,7 +2,7 @@ import { copy, type Locale } from "@/data/content";
 export function ContactSection({ locale }: { locale: Locale }) { 
     const text = copy[locale].contact;
     return(
-        <section id="iletisim" className="bg-[#e63946] px-6 py-24 text-center text-white md:px-10 md:py-36">
+        <section id="iletisim" className="bg-[#E73C29] px-6 py-24 text-center text-white md:px-10 md:py-36">
             <div className="mx-auto max-w-3xl">
                 <p className="text-[11px] font-semibold tracking-[0.2em]">{text.label}</p>
                 <h2 className="mt-6 text-5xl font-semibold leading-[0.98]  md:text-6xl"><span className="font-normal">{text.titleBefore}</span><br/> {text.titleHighlight}</h2>
