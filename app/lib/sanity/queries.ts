@@ -35,11 +35,27 @@ export type HomepageData = {
     allProjectsPage: { title: string; description: string };
     projects: {
       id: number;
-      slug: string;
-      title: string;
-      description: string;
+      slug: {
+        tr?: {
+          current?: string;
+        };
+        en?: {
+          current?: string;
+        };
+      };
+      title: {
+        tr?: string;
+        en?: string;
+      };
+      description: {
+        tr?: string;
+        en?: string;
+      };
       year: number;
-      category: string;
+      category: {
+        tr?: string;
+        en?: string;
+      };
       color: string;
     }[];
   };
@@ -103,11 +119,11 @@ export const homepageQuery = groq`
     },
     "projects": selectedWork.projects[]->{
       "id": order,
-      "slug": slug[$locale].current,
-      "title": title[$locale],
-      "description": description[$locale],
+      "slug": slug,
+      "title": title,
+      "description": description,
       year,
-      "category": category[$locale],
+      "category": category,
       color
     }
   }

@@ -18,7 +18,13 @@ export function HomePage({ locale, data }: { locale: Locale; data: HomepageData 
         <AboutSection data={data.about} />
         <BussinesSlider data={data.business} />
         <LogoSlider logos={data.references.logos} />
-        <ProjectsGrid locale={locale} />
+        <ProjectsGrid
+          locale={locale}
+          projects={data.selectedWork.projects}
+        /><ProjectsGrid
+          locale={locale}
+          projects={data.selectedWork.projects}
+        />
         <ContactSection locale={locale} />
       </main>
       <Footer locale={locale} />
