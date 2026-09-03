@@ -1,5 +1,24 @@
 import { ProjectDetail } from "@/components/ProjectDetail";
-import { getProjects } from "@/data/content";
+import { sanityFetch } from "@/app/lib/sanity/client";
+import { allProjectsQuery } from "@/app/lib/sanity/queries";
 
-export function generateStaticParams() { return getProjects("en").map(({ slug }) => ({ slug })); }
-export default async function EnglishProjectPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; return <ProjectDetail locale="en" slug={slug} />; }
+export async function generateStaticParams() {
+  const projects = await sanityFetch<{ slug?: string }[]>({
+    query: allProjectsQuery,
+    params: { locale: "en" },
+  });
+
+  return projects
+    .filter((project) => project.slug)
+    .map(({ slug }) => ({ slug: slug as string }));
+}
+
+export default async function EnglishProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  return <ProjectDetail locale="en" slug={slug} />;
+}
